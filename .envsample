@@ -1,0 +1,3 @@
+DATA_URI = "mongodb url"
+PORT = Port
+JWT_TOKEN = "Secret token"
