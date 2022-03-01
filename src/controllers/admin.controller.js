@@ -104,7 +104,7 @@ exports.adminLogin = async (req, res, next) => {
     };
     // getting a secret token when login is successful
     const secret_key = process.env.jwt_token;
-    const token = await jwt.sign(data, secret_key, { expiresIn: "1h" });
+    const token = await jwt.sign(data, "gt7hyhi9", { expiresIn: "1h" });
     return res.status(200).json({
       message: `Hi ${emailExists.lastName.toUpperCase()} ${emailExists.firstName.toUpperCase()}, Welcome Back`,
       token,
