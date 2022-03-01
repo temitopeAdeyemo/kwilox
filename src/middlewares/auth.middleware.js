@@ -27,7 +27,7 @@ exports.authorization = async (req, res, next) => {
     });
   }
 };
-// middleware to verify the role as admin before accessing an endpoint 
+// middleware to verify the role as admin before accessing an endpoint  
 exports.isAdmin = async (req, res, next)=>{
     try {
         if(req.user.role !== "Admin"){
