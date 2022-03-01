@@ -1,0 +1,3 @@
+DATA_URI = Database url
+PORT = Port
+JWT_TOKEN = TOKEN
