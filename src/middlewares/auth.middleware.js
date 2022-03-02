@@ -17,7 +17,7 @@ exports.authorization = async (req, res, next) => {
         message: "Token is required...",
       });
     }
-// decrypting the user or admin token to access the encrypted data
+// decrypting the user or admin token to access the encrypted data 
     const decryptToken = await jwt.verify(token, process.env.JWT_TOKEN, {expiresIn: "1h"})
     req.user = decryptToken
     next();
