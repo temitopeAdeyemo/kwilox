@@ -6,12 +6,12 @@ const itemSchema = new Schema(
     name: {
       type: String,
       required: true,
-      lowercase: true
+      lowercase: true,
     },
     manufacturerCompany: {
       type: String,
       required: true,
-      lowercase: true
+      lowercase: true,
     },
     quantityAvailable: {
       type: Number,

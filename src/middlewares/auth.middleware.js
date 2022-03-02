@@ -18,7 +18,7 @@ exports.authorization = async (req, res, next) => {
       });
     }
 // decrypting the user or admin token to access the encrypted data
-    const decryptToken = await jwt.verify(token, process.env.jwt_token, {expiresIn: "1h"})
+    const decryptToken = await jwt.verify(token, process.env.JWT_TOKEN, {expiresIn: "1h"})
     req.user = decryptToken
     next();
   } catch (error) {
