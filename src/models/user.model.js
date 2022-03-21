@@ -32,7 +32,11 @@ password: {
 role: {
     type: String,
     enum: ["User"],
-    default: "User"
+    default: "User",
+  },
+  isVerified: {
+    type: Boolean,
+    default: false,
   }
 },
 {
