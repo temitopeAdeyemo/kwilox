@@ -179,6 +179,41 @@ exports.verifyEmail = async (req, res, next) => {
   }
 };
 
+
+exports.resendVerificationMail = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+    const emailExists = await User.findOne({ email });
+    if (!emailExists) {
+      return res.status(400).json({
+        message: "  This email does not exist, pls sign up.",
+      });
+    }
+    const data = {
+      email: emailExists.email,
+      firstName: emailExists.firstName,
+    };
+    console.log(data);
+    // getting a secret token when login is successful
+    const secret_key = process.env.JWT_TOKEN;
+    const token = await jwt.sign(data, secret_key, { expiresIn: "900s" });
+    let mailOptions = {
+      to: emailExists.email,
+      subject: "Verify Email",
+      text: `Hi ${emailExists.firstName}, Pls verify your account with the link below.`,
+    };
+    await sendMail(mailOptions);
+    return res.status(200).json({
+      message: `Hi ${emailExists.firstName}, Pls check your mail for verification link.`,
+      token,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: `${error.message}, Please try again later.`,
+    });
+  }
+};
+
 exports.forgetPasswordLink = async (req, res, next) => {
   try {
     const { email } = req.body;

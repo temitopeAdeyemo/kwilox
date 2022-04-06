@@ -18,6 +18,7 @@ router.get(
   user.allUsers
 );
 router.post("/verify-user", user.verifyEmail);
+router.post("/resend-verification-link", user.resendVerificationMail);
 router.post("/password-reset-url", user.forgetPasswordLink);
 router.patch("/change-user-password", user.changePassword);
 router.patch("/reset-password", user.resetPassword);
