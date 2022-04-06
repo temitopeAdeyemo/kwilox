@@ -12,7 +12,7 @@ const adminRouter = require("./routes/admin.route");
 const connectDB = require("./database/db")
 //endpoint for the base url
 app.get("/", (req,res)=>{
-  res.send("Welcome to Quilox, How can we serve you better today?")
+  res.send("Welcome to Kwilox, How can we serve you better today?")
 })
 // creating a router path for app
 app.use("/api/v1", DrinkRouter);

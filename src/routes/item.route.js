@@ -9,7 +9,9 @@ router.post(
   authorization.isAdmin,
   Drink.addItems
 );
-router.get("/fetch-items", authorization.authorization, Drink.fetchItems);
+router.get("/fetch-items"
+// , authorization.authorization
+, Drink.fetchItems);
 router.patch(
   "/update-item",
   authorization.authorization,

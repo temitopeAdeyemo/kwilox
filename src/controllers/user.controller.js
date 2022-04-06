@@ -266,7 +266,7 @@ exports.resetPassword = async (req, res, next) => {
     console.log(passwordMatch);
     if (!passwordMatch) {
       return res.status(400).json({
-        message: `Old Password is not correct`,
+        message: `Old Password is not correcgt`,
       });
     }
     if (newPassword !== confirmPassword) {
