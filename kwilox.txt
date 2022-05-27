@@ -9,14 +9,4 @@ Admin:
 • Can see all registered users
 • Can search for users using their email address.
 • Can post a list of available items (drinks and confectionery) so users logged in
-can see
-
-Mode of Submission
-1. Push your codebase to a public version control repository e.g., GitHub or
-GitLab (ensure you use a good commit message pattern)
-2. Document your API using postman and publish it.
-3. Include the link of your published documentation in your readme.md file
-4. Fill this form before your presentation: Challenge 2 Submission
-5. Prepare for your presentation on Thursday, 3rd of March, 2022
-
-I wish you best of luck.
+can see.
